@@ -59,9 +59,9 @@ curl -ssLO https://github.com/seanorama/ambari-bootstrap/archive/master.zip
 unzip -q master.zip -d  /root/
 cd /root/ambari-bootstrap-master/deploy
 # Blueprint
-curl -sSL https://raw.githubusercontent.com/Chaffelson/whoville/master/templates/ambariBlueprint_minimal-HDF.json > configuration-custom.json
+curl -sSL https://raw.githubusercontent.com/harshn08/whoville/master/templates/ambariBlueprint_minimal-HDF.json > configuration-custom.json
 # This command might fail with 'resources' error, means Ambari isn't ready yet
 sleep 30
 sudo -E /root/ambari-bootstrap-master/deploy/deploy-recommended-cluster.bash
-echo 'if you get the error KeyError: resources then Ambari was too slow to come up, wait a minute and rerun "sudo -E /home/centos/ambari-bootstrap-master/deploy/deploy-recommended-cluster.bash"'
+echo 'if you get the error KeyError: resources then Ambari was too slow to come up, wait a minute and rerun "sudo -E /root/ambari-bootstrap-master/deploy/deploy-recommended-cluster.bash"'
 echo Now open your browser to http://$(curl -s icanhazptr.com):8080 and login as admin/admin to observe the cluster install
